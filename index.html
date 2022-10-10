@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css.css">
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 吸顶的导航区域 -->
+    <div class="top">
+        <div class="warp">
+            <div class="nav-box"></div>
+        </div>
+    </div>
+    <!-- 头部 -->
+    <div class="headr">
+        <div class="warp"></div>
+    </div>
+    <div class="neer">
+        <div class="warp">
+            <div class="neer-left">
+                全部商品分类
+            </div>
+        </div>
+    </div>
+    <!-- benner -->
+    <div class="benner">
+        <div class="warp">
+            <div class="left">
+                <ul class="left-nav">
+                    <li>手机 充值</li>
+                    <li>相机 智能数码</li>
+                    <li>电脑 办公配件</li>
+                    <li>电脑 办公配件</li>
+                    <li>电脑 办公配件</li>
+                    <li>电脑 办公配件</li>
+                </ul>
+                <div class="left-con">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                    <div>5</div>
+                    <div>6</div>
+                </div>
+            </div>
+            <div class="content"></div>
+        </div>
+    </div>
+    <!-- 右侧导航栏 -->
+    <div class="right-nav">
+        <p class="hover"></p>
+        <div class="app-cod">
+            <img src="./image/T1DHYPBmY_1RCvBVdK_140_180.webp" alt="">
+        </div>
+
+
+    </div>
+    <script>
+        //二维码动画
+        $(".hover").hover(
+            function(){
+                $(".app-cod").animate({
+                    right: '35px'
+                })
+                // $(".app-cod").show(200)
+                // $(".app-cod").slideDown()
+            },function(){
+                $(".app-cod").animate({
+                    right: '-143px'
+                })
+                // $(".app-cod").hide(200)
+                // $(".app-cod").slideUp()
+            }
+        )
+
+
+
+
+
+        //鼠标移动到大容器--左侧导航区域 显示导航白色
+        $(".left").hover(
+            function () {
+                $('.left-con').show();
+            },
+            function () {
+                $('.left-nav li').removeClass('active');
+                $('.left-con').hide();
+            }
+        );
+        //鼠标移入li元素上
+        $('.left-nav li').hover(function () {
+            //当前的li元素高亮背景
+            $(this).addClass('active').siblings().removeClass('active');
+            //获取当前元素的下标
+            let index = $(this).index();
+            //对应box里面的容器内容显示
+            // $('.left-con>div').eq(index).show().siblings().hide();
+            $(this).parent().siblings().children().eq($(this).index()).show().siblings().hide();
+        });
+        // 浏览器添加滚动事件
+        $(window).scroll(function () {
+            if ($(window).scrollTop() >= 700) {
+                $('.top').slideDown();
+            } else {
+                $('.top').slideUp();
+            }
+        })
+        let box = $('.neer-left').clone();
+        let nav = $(".left").clone(true);
+        $(".nav-box").append(box);
+        $(".nav-box").append(nav);
+        //吸顶下拉菜单
+        $(".nav-box").hover(
+            function () {
+                $(".nav-box .left").show();
+            },
+            function () {
+                $(".nav-box .left").hide();
+            });
+
+    </script>
+</body>
+
+</html>

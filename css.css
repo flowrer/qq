@@ -1,0 +1,132 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+ul{
+    list-style: none;
+}
+body{
+    height: 4000px;
+    background-color: rgba(255, 0, 0, 0.7);
+}
+/* 吸顶导航 */
+.top{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    background-color: rgba(255, 255, 255, 0.7);
+    z-index: 100;
+    display: none;
+}
+.top .neer-left{
+    margin-top: 15px;
+}
+
+.nav-box .left{
+    display: none;
+}
+
+/* 头部 */
+.headr{
+    height: 200px;
+    background-color: antiquewhite;
+}
+.warp{
+    width: 1200px;
+    margin: 0 auto;
+}
+.neer{
+    height: 40px;
+    background-color: burlywood;
+}
+.neer-left{
+    box-sizing: border-box;
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 15px;
+    font-weight: 700;
+    color: #585858;
+    background-color: rgb(161, 161, 161);
+}
+/* benner开始 */
+.benner{
+    height: 450px;
+    background-color: aqua;
+}
+.left{
+    position: relative;
+    width: 200px;
+    height: 450px;
+    background-color: blue;
+    float: left;
+}
+.content{
+    width: 750px;
+    height: 450px;
+    background-color: blueviolet;
+    float: left;
+}
+/* 左侧导航 */
+.left-nav>li{
+    cursor: pointer;
+    padding-left: 15px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    color: #fff;
+}
+.left-nav .active{
+    background-color: #fff;
+    color: blue;
+}
+.left-con{
+    position: absolute;
+    top: 0;
+    left:  200px;
+    width: 800px;
+    height: 450px;
+    /* background-color: #fff; */
+}
+
+.left-con>div{
+    display: none;
+    width: 800px;
+    height: 450px;
+    background-color: #fff;
+    
+}
+/* 右侧导航栏 */
+.right-nav{
+    cursor: pointer;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 35px;
+    height: 100%;
+    background-color: #5c5c5c;
+    text-align: center;
+}
+.hover{
+    position: absolute;
+    left: 7px;
+    bottom: 200px;
+    width: 20px;
+    height: 20px;
+    background-color: antiquewhite;
+}
+.hover:hover{
+    background-color: aqua;
+}
+.app-cod{
+    
+    /* display: none; */
+    position: absolute;
+    right: -143px;
+    bottom: 40px;
+    width: 140px;
+    height: 180px;
+    background-color: #fff;
+    z-index: -500;
+}
